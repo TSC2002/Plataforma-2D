@@ -22,7 +22,7 @@ public class MovimientoDelJugador : MonoBehaviour
         Destroy(other.gameObject);
         contador = contador + 1;
         Puntaje.text = "Naranjas: " + contador;
-        if (contador >= 18)
+        if (contador >= 17)
         {
             Victoria.gameObject.SetActive(true);
         }
