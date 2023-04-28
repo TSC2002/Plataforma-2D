@@ -17,7 +17,7 @@ public class Salto : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb2DJugador.AddForce(Vector2.up * 2, ForceMode2D.Impulse);
+            rb2DJugador.AddForce(Vector2.up * 4, ForceMode2D.Impulse);
         }
     }
 }

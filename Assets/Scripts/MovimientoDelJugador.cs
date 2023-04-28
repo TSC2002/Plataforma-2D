@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovimientoDelJugador : MonoBehaviour
 {
@@ -10,7 +11,30 @@ public class MovimientoDelJugador : MonoBehaviour
 
     Rigidbody2D rb2D;
 
-    
+    public Text Puntaje;
+
+    int contador;
+
+    public Text Victoria;
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(other.gameObject);
+        contador = contador + 1;
+        Puntaje.text = "Naranjas: " + contador;
+        if (contador >= 18)
+        {
+            Victoria.gameObject.SetActive(true);
+        }
+    }
+
+    public void Awake()
+    {
+        rb2D = GetComponent<Rigidbody2D>();
+        contador = 0;
+        Puntaje.text = "Naranjas: " + contador;
+        Victoria.gameObject.SetActive(false);
+    }
 
 
     // Start is called before the first frame update
